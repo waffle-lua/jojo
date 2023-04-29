@@ -1,0 +1,2 @@
+*.yue linguist-language=moonscript
+*.lua linguist-generated=true
