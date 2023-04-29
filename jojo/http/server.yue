@@ -1,0 +1,39 @@
+import 'http' as http
+import 'waffle' as waffle
+import 'jojo.http.router' as router
+
+class Server
+  new: (@addr = 'localhost:8080') =>
+    @router = router.new!
+    @srv = http.server @addr
+    nil
+
+  get: (path, fn) =>
+    @router\match 'GET', path, fn
+  post: (path, fn) =>
+    @router\match 'POST', path, fn
+  put: (path, fn) =>
+    @router\match 'PUT', path, fn
+  delete: (path, fn) =>
+    @router\match 'DELETE', path, fn
+  patch: (path, fn) =>
+    @router\match 'PATCH', path, fn
+  head: (path, fn) =>
+    @router\match 'HEAD', path, fn
+  any: (path, fn) =>
+    @router\any path, fn
+
+  execute: (method, path, ...) =>
+    @routes\execute method, path, { ... }
+
+  run_single: =>
+    while true
+      request, response = @srv\accept!
+      response\header 'server', "jojo-waffle-#{ waffle.version! }"
+      try
+        @router\execute request.method, request.path, { :request, :response }
+      catch err
+        response\code 500
+        response\write json.encode { error: err }
+      response\done!
+

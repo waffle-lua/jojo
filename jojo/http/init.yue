@@ -1,0 +1,10 @@
+path = (...)\gsub "%.init$", ""
+
+macro r = (pkg) ->
+  "require(path .. \".\" .. #{ pkg })"
+
+export default {
+  server: $r 'http'
+  router: $r 'router'
+  client: nil
+}
