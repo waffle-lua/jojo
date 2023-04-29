@@ -125,6 +125,8 @@ github.com/tengattack/gluacrypto v0.0.0-20220119075059-93465d506ca9 h1:F0+h4YQmw
 github.com/tengattack/gluacrypto v0.0.0-20220119075059-93465d506ca9/go.mod h1:stSpJ0yGGTNigTjOoPd2QkUaZhRxEHcYhCpJUdl1bsQ=
 github.com/vadv/gopher-lua-libs v0.4.1 h1:NgxYEQ0C027X1U348GnFBxf6S8nqYtgHUEuZnA6w2bU=
 github.com/vadv/gopher-lua-libs v0.4.1/go.mod h1:j16bcBLqJUwpQT75QztdmfOa8J7CXMmf8BLbtvAR9NY=
+github.com/waffle-lua/waffle v0.0.3 h1:VUUeOuPkNgft5n7aQRyd7B5ha9KjdkcK+TatJvbO8UQ=
+github.com/waffle-lua/waffle v0.0.3/go.mod h1:glspLHVzlu5cZAKVZ12Pdf+LCNSxdSzjwo99+GExJcc=
 github.com/yuin/gluamapper v0.0.0-20150323120927-d836955830e7 h1:noHsffKZsNfU38DwcXWEPldrTjIZ8FPNKx8mYMGnqjs=
 github.com/yuin/gluamapper v0.0.0-20150323120927-d836955830e7/go.mod h1:bbMEM6aU1WDF1ErA5YJ0p91652pGv140gGw4Ww3RGp8=
 github.com/yuin/gopher-lua v0.0.0-20200816102855-ee81675732da/go.mod h1:E1AXubJBdNmFERAOucpDIxNzeGfLzg0mYh+UfMWdChA=

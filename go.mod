@@ -2,12 +2,10 @@ module github.com/waffle-lua/jojo
 
 go 1.20
 
-replace github.com/waffle-lua/waffle => /home/chrsm/src/waffle
-
 require (
 	github.com/stretchr/testify v1.8.2
 	github.com/vadv/gopher-lua-libs v0.4.1
-	github.com/waffle-lua/waffle v0.0.2
+	github.com/waffle-lua/waffle v0.0.3
 )
 
 require (
