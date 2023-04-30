@@ -1,4 +1,5 @@
 import 'http' as http
+import 'json' as json
 import 'waffle' as waffle
 import 'jojo.http.router' as router
 
@@ -6,7 +7,6 @@ class Server
   new: (@addr = 'localhost:8080') =>
     @router = router.new!
     @srv = http.server @addr
-    nil
 
   get: (path, fn) =>
     @router\match 'GET', path, fn
