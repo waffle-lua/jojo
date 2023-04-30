@@ -4,7 +4,7 @@ macro r = (pkg) ->
   "require(path .. \".\" .. #{ pkg })"
 
 export default {
-  server: $r 'http'
+  server: $r 'server'
   router: $r 'router'
-  client: nil
+  client: $r 'client'
 }

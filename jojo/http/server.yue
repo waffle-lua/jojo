@@ -37,3 +37,4 @@ class Server
         response\write json.encode { error: err }
       response\done!
 
+export default Server

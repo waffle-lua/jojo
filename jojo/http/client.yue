@@ -1,0 +1,45 @@
+import 'http' as http
+import 'waffle' as waffle
+
+class Client
+  @DEFAULT_TIMEOUT = 30
+
+  new: (args) =>
+    @args = args or {}
+    @c = nil
+
+    @args.timeout = @args.timeout or @@DEFAULT_TIMEOUT
+
+  set_proxy: (proxy) =>
+    assert (type proxy) == 'string', 'proxy should be a string'
+    @args.proxy = proxy
+  set_timeout: (timeout) =>
+    assert (type timeout) == 'number', 'timeout should be a number'
+    @args.timeout = timeout
+  set_insecure: (b) =>
+    assert (type b) == 'boolean', 'insecure should be a boolean'
+    @args.insecure_ssl = b
+  set_basic_auth: (user = '', pwd = '') =>
+    @args.basic_auth_user = user
+    @args.basic_auth_password = pwd
+  set_headers: (headers = {}) =>
+    assert (type headers) == 'table', 'headers should be a key-value table'
+    @args.headers = headers
+  set_debug: (debug) =>
+    assert (type debug) == 'boolean', 'debug should be a boolean'
+    @args.debug = debug
+
+  build: =>
+    @c = http.client @args
+
+  do_request: (r) =>
+    resp, err = @c\do_request r
+
+    resp, err
+
+  new_request: (method, url, body) ->
+    req, err = http.request method, url, body
+
+    req, err
+
+export default Client

@@ -7,5 +7,5 @@ export default {
   http:
     server: $r 'http.server'
     router: $r 'http.router'
-    client: nil
+    client: $r 'http.client'
 }
